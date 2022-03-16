@@ -16,7 +16,7 @@ app.use(cookieParser());
 app.use(express.static(viewsPath));
 
 //database
-/*
+
 const db = require('./models/index');
 db.mongoose
 	.connect(process.env.MONGODB_CONNECTION_STRING || db.url, {
@@ -31,10 +31,12 @@ db.mongoose
 		process.exit();
 	});
 
+
+
 if (process.env.NODE_ENV === 'production') {
 	app.use(express.static('./client/build'));
 }
-*/
+
 app.get('/', function (req, res) {
 	res.sendFile(viewsPath + 'index.html');
 });

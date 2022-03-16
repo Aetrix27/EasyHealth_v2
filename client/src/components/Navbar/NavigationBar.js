@@ -1,0 +1,61 @@
+import React, { useState } from "react"
+import { Redirect } from "react-router-dom"
+import { Navbar, Container, Nav } from "react-bootstrap"
+import "./Navbar.css"
+//import AuthService from "../../services/auth-service";
+import { Component } from "react"
+import { useHistory } from 'react-router-dom';
+
+//var user = AuthService.getCurrentUser();
+
+export default class NavigationBar extends Component{
+  
+  constructor(props) {
+    super(props);
+    //this.user = AuthService.getCurrentUser();
+    //this.logoutUser = this.logoutUser.bind(this);
+}
+/*
+logoutUser(){
+  AuthService.logout();
+  return (
+    <Redirect to="/" />
+  );
+};
+*/
+  //function NavigationBar() {
+  render(){
+
+  return (
+    <Navbar expand="lg" variant="light" className="navbar">
+      <Container>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          {/* Logo Section          <Nav className="me-auto">
+            <Navbar.Brand href="/">
+       
+            </Navbar.Brand>
+          </Nav>*/}
+ 
+          
+          {/* Links Section */}
+          <Nav>
+            <Nav.Link className="nav-item" href="/documents">Documents</Nav.Link>
+            <Nav.Link className="nav-item" href="/">Home</Nav.Link>
+            <Nav.Link className="nav-item" href="/createDocument">New Document</Nav.Link>
+            <Nav.Link className="nav-item" href="/login">Login</Nav.Link>
+            <Nav.Link className="nav-item" href="/register">Register</Nav.Link>
+
+            {/* Conditional rendering of logged-in features             {!user && <Nav.Link className="nav-item" href="/login">Login page</Nav.Link>}
+            {user && <Nav.Link className="nav-item" onClick={logoutUser}>Logout</Nav.Link>}*/}
+
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
+  
+  }
+}
+
+//export default NavigationBar

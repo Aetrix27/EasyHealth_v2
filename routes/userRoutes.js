@@ -1,4 +1,5 @@
 
+/*
 const { authJwt } = require('../middleware');
 const { verifySignUp } = require("../middleware");
 const users = require("../controllers/userController.js");
@@ -28,3 +29,4 @@ module.exports = function(app) {
 
 
 };
+*/
