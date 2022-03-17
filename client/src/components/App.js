@@ -2,13 +2,13 @@ import './App.css';
 import { Switch, Route } from 'react-router-dom';
 //import { Switch, Route, Router } from "react-router-dom";
 
-//import NavigationBar from './components/Navbar/NavigationBar';
+import NavigationBar from './Navbar/Navbar';
 import Landing from './Landing/Landing';
-//import Document from './components/Documents/Documents';
-//import CreateDocument from './components/Documents/createDocument';
+import Documents from './Documents/Documents';
+import CreateDocument from './Documents/createDocument';
 import { Navbar, Container, Nav } from "react-bootstrap"
-//import Register from './components/Register/Register';
-//import Login from './components/Login/Login';
+import Register from './Register/Register';
+import Login from './Login/Login';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter } from 'react-router-dom/cjs/react-router-dom.min';
 import React from 'react';
@@ -26,16 +26,22 @@ import React from 'react';
 
 function App() {
 	return (
-			<div id = "App">
+
+		<div id = "App">
+				<NavigationBar />
 
 				<Switch>
 					<Route exact path = "/" ><Landing /></Route>
-					
+					<Route component = {Documents} path="/documents" />
+					<Route component = {CreateDocument} path="/createDocument" />
+					<Route path="/register" component={Register} />
+					<Route path="/login" component={Login} />
+
 				</Switch>
 				
-				
 			</div>
-			
+				
+							
 	);
 }
 

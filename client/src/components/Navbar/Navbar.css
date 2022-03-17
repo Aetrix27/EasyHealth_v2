@@ -1,0 +1,9 @@
+.navbar {
+  background-color: #00a2ff;
+  margin-bottom: 1rem;
+}
+
+.nav-item Nav.Link{
+    font-family: 'Nunito', sans-serif;
+    color: white;
+}

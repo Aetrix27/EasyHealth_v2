@@ -9,6 +9,6 @@ db.mongoose = mongoose;
 
 db.url = dbConfig.url;
 db.users = require("./userModel")(mongoose);
-db.cards = require('./documentModel')(mongoose);
+db.documents = require('./documentModel')(mongoose);
 
 module.exports = db;

@@ -31,8 +31,6 @@ db.mongoose
 		process.exit();
 	});
 
-
-
 if (process.env.NODE_ENV === 'production') {
 	app.use(express.static('./client/build'));
 }
@@ -41,7 +39,8 @@ app.get('/', function (req, res) {
 	res.sendFile(viewsPath + 'index.html');
 });
 
-//require('./routes/documentRoutes')(app);
+require('./routes/documentRoutes')(app);
+require('./routes/userRoutes')(app);
 
 app.get('*', (request, response) => {
 	response.sendFile(path.join(__dirname, './client/build', 'index.html'));
