@@ -45,6 +45,7 @@ logoutUser(){
             <Nav.Link className="nav-item" href="/createDocument">New Document</Nav.Link>
             <Nav.Link className="nav-item" href="/login">Login</Nav.Link>
             <Nav.Link className="nav-item" href="/register">Register</Nav.Link>
+            <Nav.Link className="nav-item" href="/notes">Notes</Nav.Link>
 
             {/* Conditional rendering of logged-in features             {!user && <Nav.Link className="nav-item" href="/login">Login page</Nav.Link>}
             {user && <Nav.Link className="nav-item" onClick={logoutUser}>Logout</Nav.Link>}*/}

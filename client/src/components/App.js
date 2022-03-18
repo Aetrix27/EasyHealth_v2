@@ -9,6 +9,7 @@ import CreateDocument from './Documents/createDocument';
 import { Navbar, Container, Nav } from "react-bootstrap"
 import Register from './Register/Register';
 import Login from './Login/Login';
+import Notes from './Notes/Notes';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter } from 'react-router-dom/cjs/react-router-dom.min';
 import React from 'react';
@@ -26,7 +27,7 @@ import React from 'react';
 
 function App() {
 	return (
-
+		
 		<div id = "App">
 				<NavigationBar />
 
@@ -36,6 +37,7 @@ function App() {
 					<Route component = {CreateDocument} path="/createDocument" />
 					<Route path="/register" component={Register} />
 					<Route path="/login" component={Login} />
+					<Route path="/notes" component={Notes} />
 
 				</Switch>
 				
