@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Redirect } from "react-router-dom"
 import { Navbar, Container, Nav } from "react-bootstrap"
 import "./Navbar.css"
-//import AuthService from "../../services/auth-service";
+import AuthService from "../../services/auth-service";
 import { Component } from "react"
 import { useHistory } from 'react-router-dom';
 
@@ -12,17 +12,17 @@ export default class NavigationBar extends Component{
   
   constructor(props) {
     super(props);
-    //this.user = AuthService.getCurrentUser();
-    //this.logoutUser = this.logoutUser.bind(this);
+    this.user = AuthService.getCurrentUser();
+    this.logoutUser = this.logoutUser.bind(this);
 }
-/*
+
 logoutUser(){
   AuthService.logout();
   return (
     <Redirect to="/" />
   );
 };
-*/
+
   //function NavigationBar() {
   render(){
 
@@ -40,12 +40,13 @@ logoutUser(){
           
           {/* Links Section */}
           <Nav>
-            <Nav.Link className="nav-item" href="/documents">Documents</Nav.Link>
-            <Nav.Link className="nav-item" href="/">Home</Nav.Link>
-            <Nav.Link className="nav-item" href="/createDocument">New Document</Nav.Link>
-            <Nav.Link className="nav-item" href="/login">Login</Nav.Link>
-            <Nav.Link className="nav-item" href="/register">Register</Nav.Link>
-            <Nav.Link className="nav-item" href="/notes">Notes</Nav.Link>
+            <Nav.Link id = "nav" className="nav-item" href="/documents">Documents</Nav.Link>
+            <Nav.Link id = "nav" className="nav-item" href="/">Home</Nav.Link>
+            <Nav.Link id = "nav" className="nav-item" href="/createDocument">New Document</Nav.Link>
+            {!this.user && <Nav.Link id = "nav" className="nav-item" href="/login">Login</Nav.Link>}
+            {this.user && <Nav.Link id = "nav" className="nav-item" onClick={this.logoutUser}>Logout</Nav.Link>}
+            <Nav.Link id = "nav" className="nav-item" href="/register">Register</Nav.Link>
+            <Nav.Link id = "nav" className="nav-item" href="/notes">Notes</Nav.Link>
 
             {/* Conditional rendering of logged-in features             {!user && <Nav.Link className="nav-item" href="/login">Login page</Nav.Link>}
             {user && <Nav.Link className="nav-item" onClick={logoutUser}>Logout</Nav.Link>}*/}

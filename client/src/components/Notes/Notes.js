@@ -7,17 +7,15 @@ import './draw.js'
 //var user = AuthService.getCurrentUser();
 
 const draw = context => {
-  var drawing = false;
+var drawing = false;
 var context;
 
 window.onload = function()
 {
-    //Clear Button
     document.getElementById('buttonClear').addEventListener('click', function(){
             context.clearRect(0,0, context.canvas.width, context.canvas.height);       
     }, false);
     
-    //Back Button
     document.getElementById('buttonClear').addEventListener('click', function(){
             document.getElementById('myCanvas').style.display = "block";
             document.getElementById('saveArea').style.display = "none";
@@ -25,17 +23,14 @@ window.onload = function()
             
         }, false);
     
-    //Width Scale
     document.getElementById('lineWidth').addEventListener('change', function(){
             context.lineWidth = document.getElementById('lineWidth').value;
         }, false);
     
-    //Color
     document.getElementById('colorChange').addEventListener('change', function(){
             context.strokeStyle = document.getElementById('colorChange').value;
         }, false);
     
-    //Save
     document.getElementById('buttonSave').addEventListener('click', function(){
             document.getElementById('myCanvas').style.display = "none";
             document.getElementById('saveArea').style.display = "block";
@@ -45,7 +40,6 @@ window.onload = function()
             document.getElementById('canvasImg').src = dataURL;
         }, false);
     
-    //Size Canvas
     context = document.getElementById('myCanvas').getContext("2d");
     context.canvas.width = window.innerWidth;
     context.canvas.height = window.innerHeight-60;
@@ -107,14 +101,12 @@ function Notes(){
 
     <div>
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width"></meta>
-        <title>Fingerpaint</title>
-        
+          <h2>New Note</h2>
             <Canvas draw={draw} height={100} width={100} />
             <script type="text/javascript" src="draw.js"></script>
 
             <div id='saveArea'>
               <img id = "canvasImg" />
-              <h2> Right Click to Save</h2>
               <button id = "buttonBack">Back</button>
 
             </div>

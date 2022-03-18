@@ -3,7 +3,7 @@
   margin-bottom: 1rem;
 }
 
-.nav-item Nav.Link{
-    font-family: 'Nunito', sans-serif;
+#nav{
+    font-family: 'Helvetica', sans-serif;
     color: white;
 }

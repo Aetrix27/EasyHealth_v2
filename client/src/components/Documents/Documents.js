@@ -27,7 +27,7 @@ function Documents() {
 			  </div>
 			  <p>{e.content}</p>
 			  <div>
-			  <input type="button" value="Delete" onClick={() => documentsService.deleteCard(e._id, AuthService.getCurrentUser().accessToken)}></input>
+			  <input type="button" value="Delete" onClick={() => documentsService.deleteDocument(e._id, AuthService.getCurrentUser().accessToken)}></input>
 			  </div>
 	   
 			</div>
