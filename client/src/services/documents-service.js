@@ -8,6 +8,10 @@ class documentsService {
     // makes a POST req to backend to submit post into the database
     // takes in title and body of post as well as the author 
     submitDocument(title, content, accessToken) {
+        if (!accessToken) {
+            console.error('Access token is missing or null');
+            return;
+        }
         axios
         .post(`${API_URL}/create`, {
             title,

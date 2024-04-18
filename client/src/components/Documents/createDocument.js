@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 // importing authService in order to use function that gets info of currently authenticated user
 import authService from "../../services/auth-service";
@@ -18,7 +18,7 @@ function DocumentsComponent() {
     const [documentTitle, setDocumentTitle] = useState('');
 	const [documentBody, setBody] = useState('');
 
-    var history = useHistory();
+    var history = useNavigate();
     
     // function for submitting post
     //this.submitCard = this.submitCard.bind(this);
@@ -28,7 +28,7 @@ function DocumentsComponent() {
 
     //submits posts with title, body, and currently authenticated user's accessToken
     const submitDocument = () => {
-        history.push('/documents');
+        history('/documents');
 
         const title = documentTitle
         const content = documentBody

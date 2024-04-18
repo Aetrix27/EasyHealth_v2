@@ -1,11 +1,11 @@
 import { React, useEffect, useState } from 'react';
 
 import authService from "../../services/auth-service";
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Login() {
 
-  var history = useHistory();
+  var history = useNavigate();
     const [loginUsername, setUsername] = useState('');
     const [loginPassword, setPassword] = useState('');
     // create react references to username and password input elements
@@ -17,7 +17,7 @@ function Login() {
   
     // takes current values of inputted username and password and submits it to the backend through auth-services
     const loginUser = () => {
-      history.push('/');
+      history('/');
 
       authService.login(loginUsername, loginPassword)
       console.log(`Username: ${loginUsername} \nPassword: ${loginPassword}`)

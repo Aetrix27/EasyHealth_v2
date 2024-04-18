@@ -1,10 +1,10 @@
 import React, { useState } from "react"
-import { Redirect } from "react-router-dom"
+import { Navigate } from "react-router-dom"
 import { Navbar, Container, Nav } from "react-bootstrap"
 import "./Navbar.css"
 import AuthService from "../../services/auth-service";
 import { Component } from "react"
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 //var user = AuthService.getCurrentUser();
 
@@ -19,7 +19,7 @@ export default class NavigationBar extends Component{
 logoutUser(){
   AuthService.logout();
   return (
-    <Redirect to="/" />
+    <Navigate to="/" />
   );
 };
 

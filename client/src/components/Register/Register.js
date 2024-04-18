@@ -1,11 +1,11 @@
 import { React, useEffect, useState } from 'react';
 
 import authService from "../../services/auth-service";
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 // page for registering a user account
 function RegisterUser() {
-    var history = useHistory();
+    var history = useNavigate();
     const [registerUsername, setUsername] = useState('');
     const [registerPassword, setPassword] = useState('');
     
@@ -18,7 +18,7 @@ function RegisterUser() {
 
   // takes current values of inputted username and password and submits it to the backend through auth-services
   const register = () => {
-    history.push('/');
+    history('/');
 
     const username = registerUsername; 
     const password = registerPassword;

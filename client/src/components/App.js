@@ -1,5 +1,5 @@
 import './App.css';
-import { Switch, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 //import { Switch, Route, Router } from "react-router-dom";
 
 import NavigationBar from './Navbar/Navbar';
@@ -11,7 +11,6 @@ import Register from './Register/Register';
 import Login from './Login/Login';
 import Notes from './Notes/Notes';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter } from 'react-router-dom/cjs/react-router-dom.min';
 import React from 'react';
 
 
@@ -31,15 +30,15 @@ function App() {
 		<div id = "App">
 				<NavigationBar />
 
-				<Switch>
-					<Route exact path = "/" ><Landing /></Route>
-					<Route component = {Documents} path="/documents" />
-					<Route component = {CreateDocument} path="/createDocument" />
-					<Route path="/register" component={Register} />
-					<Route path="/login" component={Login} />
-					<Route path="/notes" component={Notes} />
+				<Routes>
+					<Route exact path="/" element={<Landing />} />
+					<Route element={<Documents />} path="/documents" />
+					<Route element={<CreateDocument />} path="/createDocument" />
+					<Route path="/register" element={<Register />} />
+					<Route path="/login" element={<Login />} />
+					<Route path="/notes" element={<Notes />} />
 
-				</Switch>
+				</Routes>
 				
 			</div>
 				
