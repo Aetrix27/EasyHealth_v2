@@ -46,7 +46,7 @@ class AuthService {
 
   // get current user's ID and accesstoken
   getCurrentUser() {
-    return JSON.parse(localStorage.getItem('user'));;
+    return JSON.parse(localStorage.getItem('user'));
   }
 }
 

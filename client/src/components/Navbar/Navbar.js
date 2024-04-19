@@ -26,6 +26,7 @@ logoutUser(){
   //function NavigationBar() {
   render(){
 
+
   return (
     <Navbar expand="lg" variant="light" className="navbar">
       <Container>
@@ -40,9 +41,9 @@ logoutUser(){
           
           {/* Links Section */}
           <Nav>
-            <Nav.Link id = "nav" className="nav-item" href="/documents">Documents</Nav.Link>
             <Nav.Link id = "nav" className="nav-item" href="/">Home</Nav.Link>
-            <Nav.Link id = "nav" className="nav-item" href="/createDocument">New Document</Nav.Link>
+            {this.user && <Nav.Link id = "nav" className="nav-item" href="/documents">Documents</Nav.Link>}
+            {this.user && <Nav.Link id = "nav" className="nav-item" href="/createDocument">New Document</Nav.Link>}
             {!this.user && <Nav.Link id = "nav" className="nav-item" href="/login">Login</Nav.Link>}
             {this.user && <Nav.Link id = "nav" className="nav-item" onClick={this.logoutUser}>Logout</Nav.Link>}
             <Nav.Link id = "nav" className="nav-item" href="/register">Register</Nav.Link>
