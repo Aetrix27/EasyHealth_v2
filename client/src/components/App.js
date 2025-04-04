@@ -39,7 +39,11 @@ function App() {
 					<Route path="/notes" element={<Notes />} />
 
 				</Routes>
-				
+				<footer class="container-fluid footer footer-main">
+					<div class="row text-white">
+						2025 David Guerrero
+					</div>
+				</footer>
 			</div>
 				
 							

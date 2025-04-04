@@ -27,7 +27,7 @@ function RegisterUser() {
   }
 
     return (
-        <div>
+        <div class="section text-center"> 
         <h1>Registration</h1>    
             <form>
             <label for="registerUsername"> Username: </label>

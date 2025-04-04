@@ -25,7 +25,7 @@ function Login() {
 
 
   return (
-      <div>
+      <div class="section text-center">
       <h1>Login</h1>    
           <form>
           <label for="loginUsername"> Username: </label>

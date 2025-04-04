@@ -28,7 +28,7 @@ logoutUser(){
 
 
   return (
-    <Navbar expand="lg" variant="light" className="navbar">
+    <Navbar expand="lg" variant="light" className="navbar-header">
       <Container>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

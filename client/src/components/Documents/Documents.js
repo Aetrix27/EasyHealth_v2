@@ -38,7 +38,7 @@ function Documents() {
 
 
 	return (
-		<div className="documents">
+		<div style={{ marginLeft: '30px' }} className="documents">
 		  <h1>Documents</h1>		
 	
 		  {/* Create Post button | Accessed via log-in*/}
@@ -49,7 +49,7 @@ function Documents() {
 		  }
 		  
 		  {/* DisplaysPosts */}
-		  <div className="displayDocuments">
+		  <div className="section">
 			{data ? generateDocuments() : 'loading'}
 		  </div>
 		  
